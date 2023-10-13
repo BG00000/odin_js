@@ -31,6 +31,8 @@ function createBookObjet(_title, _author, _pages, _read) {
 const elephantsOnAcid = new createBookObjet('Elephants on Acid', 'Alex Boese', '283', 'has been read')
 console.log(elephantsOnAcid.info())
 
+//prototypes:
+
 const testProtoFunc = new createBookObjet()
 
 
@@ -46,4 +48,14 @@ testProtoFunc.protoFunction()
 console.log(elephantsOnAcid.valueOf())
 
 
+function constructor(_value, _key) {
+    this._value = _value
+    this._key = _key
 
+    this.call = () => {
+        return `${_value}, ${_key}`
+    }
+}
+
+const instance = new constructor('THIS IS THE KEY', 'THIS IS THE VALUE')
+console.log(instance.call())
